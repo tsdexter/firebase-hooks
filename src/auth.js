@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import firebase from "@firebase/app";
 import "firebase/auth";
-import "firebase/firestore";
 
-export const useFirebaseAuth = addOnAuthStateChanged => {
-  const auth = firebase.auth();
+export const useFirebaseAuth = (auth, addOnAuthStateChanged) => {
   const [user, setUser] = useState(null);
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [error, setError] = useState(null);

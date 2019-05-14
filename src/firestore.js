@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "firebase/auth";
 import "firebase/firestore";
 
 export const useFirestore = ({ ref, getOnce }) => {
