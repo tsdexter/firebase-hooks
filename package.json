@@ -1,0 +1,31 @@
+{
+  "name": "@tsdexter/firebase-hooks",
+  "version": "1.0.0",
+  "description": "React hooks for Firebase features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsdexter/firebase-hooks.git"
+  },
+  "keywords": [
+    "firebase",
+    "google",
+    "react",
+    "react",
+    "hooks",
+    "hooks"
+  ],
+  "author": "Thomas Dexter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsdexter/firebase-hooks/issues"
+  },
+  "homepage": "https://github.com/tsdexter/firebase-hooks#readme",
+  "dependencies": {
+    "firebase": "^6.0.2",
+    "react": "^16.8.6"
+  }
+}
