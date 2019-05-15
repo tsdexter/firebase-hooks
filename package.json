@@ -1,6 +1,6 @@
 {
   "name": "@tsdexter/firebase-hooks",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React hooks for Firebase features",
   "main": "lib/index.js",
   "scripts": {

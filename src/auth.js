@@ -68,7 +68,7 @@ export const useFirebaseAuth = (auth, addOnAuthStateChanged) => {
     } else {
       setIsAuthenticating(true);
       auth
-        .createUserWithEmailAndPassword(email, password)
+        .createUserWithEmailAndPassword(useEmail, usePassword)
         .catch(function(error) {
           setError(error);
         });
