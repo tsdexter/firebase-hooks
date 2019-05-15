@@ -10,11 +10,29 @@ export const useFirebaseAuth = (auth, addOnAuthStateChanged) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  let signInCallback = () => {
+    return;
+  };
+  let signOutCallback = () => {
+    return;
+  };
+
+  const setSignInCallback = callback => {
+    signInCallback = callback;
+  };
+
+  const setSignOutCallback = callback => {
+    signOutCallback = callback;
+  };
+
   const signInAnonymously = () => {
     setIsAuthenticating(true);
-    auth.signInAnonymously().catch(error => {
-      setError(error);
-    });
+    auth
+      .signInAnonymously()
+      .catch(error => {
+        setError(error);
+      })
+      .then(signInCallback);
   };
 
   const signInWithEmailAndPassword = values => {
@@ -28,7 +46,8 @@ export const useFirebaseAuth = (auth, addOnAuthStateChanged) => {
         .signInWithEmailAndPassword(useEmail, usePassword)
         .catch(function(error) {
           setError(error);
-        });
+        })
+        .then(signInCallback);
     } else {
       setError(new Error("Email and Password are required!"));
     }
@@ -57,7 +76,7 @@ export const useFirebaseAuth = (auth, addOnAuthStateChanged) => {
   };
 
   const signOut = () => {
-    auth.signOut();
+    auth.signOut().then(signOutCallback);
   };
 
   useEffect(() => {
@@ -92,6 +111,8 @@ export const useFirebaseAuth = (auth, addOnAuthStateChanged) => {
     setPassword,
     confirmPassword,
     setConfirmPassword,
-    error
+    error,
+    setSignInCallback,
+    setSignOutCallback
   };
 };
